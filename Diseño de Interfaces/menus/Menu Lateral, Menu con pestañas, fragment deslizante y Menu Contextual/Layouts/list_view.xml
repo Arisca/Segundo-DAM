@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imagefoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="TODO"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="50dp"
+        android:layout_toRightOf="@id/imagefoto"
+        android:text="Nombre Apellido"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textNum"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textNombre"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/imagefoto"
+        android:text="12345"
+        android:textSize="12sp" />
+
+</RelativeLayout>
