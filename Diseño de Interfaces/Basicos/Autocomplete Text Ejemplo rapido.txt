@@ -1,0 +1,7 @@
+String[] peliculas = new String[]{"Scarface", "Titanic", "Pretty Woman", "Star Wars", "El rey León", "E.T"};
+
+AutoCompleteTextView list_peliculas= (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
+
+ArrayAdapter<String> adaptador = new ArrayAdapter<String> (this, android.R.layout.simple_dropdown_item_1line, peliculas);
+list_peliculas.setAdapter(adaptador);
+list_peliculas.setThreshold(1);

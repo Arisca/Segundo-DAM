@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding ="20dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="174dp"
+        android:layout_height="153dp"
+        android:contentDescription="@string/imagen"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textDista"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:textStyle="italic"/>
+
+    <Spinner
+        android:id="@+id/spinneropciones"
+        android:layout_width="56dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="-20dp"
+        android:layout_gravity="fill_horizontal"
+        android:entries="@array/combo_opciones" />
+</LinearLayout>

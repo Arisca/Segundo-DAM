@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Buscar">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="casual"
+        android:text="@string/g_neros"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="16dp"
+        app:layout_anchor="@+id/chipGroup"
+        app:layout_anchorGravity="center"
+        app:singleSelection="true">
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPS4"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#AED581"
+            android:text="PS4"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPC"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PC"
+            android:backgroundTint="#AED581"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipXBOX"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XBOX"
+            android:backgroundTint="#AED581"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipWII"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WII"
+            android:backgroundTint="#AED581"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipWIIU"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WIIU"
+            android:backgroundTint="#AED581"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3DS"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3DS"
+            android:backgroundTint="#AED581"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipX360"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X360"
+            android:backgroundTint="#AED581"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="218dp"
+        android:fontFamily="casual"
+        android:text="Plataformas :"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:backgroundTint="#AED581"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="383dp"
+        android:layout_height="313dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/accion"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Acción"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/aventura"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Aventura"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/deportes"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Deportes"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/disparos"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Disparos"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/estrategia"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Estrategia"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/lucha"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Lucha"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/musical"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Musical"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/rol"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Rol"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="380dp"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/simulacion"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:text="Simulación"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textFontWeight="@android:integer/config_shortAnimTime"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="#AED581"
+        app:fabAlignmentMode="center"
+        app:fabCradleVerticalOffset="12dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        app:layout_anchor="@+id/bottomAppBar"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

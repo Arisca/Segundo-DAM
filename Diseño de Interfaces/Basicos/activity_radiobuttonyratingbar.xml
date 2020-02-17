@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".radiobuttonyratingbar">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="casual"
+        android:text="@string/elige_una_opci_n"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radiogruop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="95dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbangry"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="casual"
+            android:text="Angry Birds"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbdragon"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="casual"
+            android:text="Dragon fly"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbhill"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="casual"
+            android:text="Hill climbing racing"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbpocket"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="casual"
+            android:text="Pocket soccer"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbradiant"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="casual"
+            android:text="Radiant Defense"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="32dp"
+        android:indeterminateTint="?attr/colorError"
+        android:indeterminateTintMode="src_in"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:outlineAmbientShadowColor="@android:color/holo_orange_dark"
+        android:outlineSpotShadowColor="?attr/colorError"
+        android:progressTint="@android:color/holo_orange_light"
+        android:progressTintMode="src_in"
+        android:secondaryProgressTint="?attr/colorError"
+        android:secondaryProgressTintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="28dp"
+        android:longClickable="true"
+        android:max="5"
+        android:orientation="horizontal"
+        android:progressTint="@color/colorPrimary"
+        android:thumbTint="@color/colorPrimary"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/aceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="516dp"
+        android:layout_marginEnd="28dp"
+        android:clickable="true"
+        android:forceDarkAllowed="false"
+        android:tint="@color/colorPrimary"
+        android:tintMode="multiply"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/checkbox_on_background" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

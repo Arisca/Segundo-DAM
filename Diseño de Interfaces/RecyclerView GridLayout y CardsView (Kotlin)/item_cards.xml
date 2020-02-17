@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp">
+          
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tbCard"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@color/color_divider"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            </androidx.appcompat.widget.Toolbar>
+
+</androidx.cardview.widget.CardView>

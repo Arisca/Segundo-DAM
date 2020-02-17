@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".informacion">
+
+    <TextView
+        android:id="@+id/textDensi"
+        android:layout_width="339dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center_horizontal"
+        android:text="Densidad"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDista" />
+
+    <TextView
+        android:id="@+id/densi1"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Densidad 1"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textDensi"
+        app:layout_constraintTop_toBottomOf="@+id/textDensi" />
+
+    <TextView
+        android:id="@+id/densi2"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Densidad 2"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/densi1"
+        app:layout_constraintEnd_toEndOf="@+id/textDensi" />
+
+    <TextView
+        android:id="@+id/textDista"
+        android:layout_width="339dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="92dp"
+        android:gravity="center_horizontal"
+        android:text="Distancia al Sol"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextDia" />
+
+    <TextView
+        android:id="@+id/dista1"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Distancia 1"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textDista"
+        app:layout_constraintTop_toBottomOf="@+id/textDista" />
+
+    <TextView
+        android:id="@+id/Distan"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:background="#E1BEE7"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/dia1"
+        app:layout_constraintEnd_toEndOf="@+id/TextDia" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        android:background="#E1BEE7"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/TextDia"
+        app:layout_constraintTop_toTopOf="@+id/TextDia" />
+
+    <TextView
+        android:id="@+id/dista2"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Distancia 2"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dista1"
+        app:layout_constraintEnd_toEndOf="@+id/textDista"
+        app:layout_constraintTop_toBottomOf="@+id/textDista" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/compara_dos_planetas"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Planeta1"
+        android:layout_width="164dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="15dp"
+        android:background="#CE93D8"
+        android:gravity="center"
+        android:hint="Planeta 1"
+        android:maxEms="1"
+        android:maxLength="10"
+        app:layout_constraintEnd_toStartOf="@+id/Planeta2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Planeta2"
+        android:layout_width="164dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="33dp"
+        android:background="#CE93D8"
+        android:gravity="center"
+        android:hint="Planeta 2"
+        android:maxLength="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toEndOf="@+id/Planeta1"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/TextDia"
+        android:layout_width="339dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="196dp"
+        android:gravity="center"
+        android:text="@string/di_metro"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dia2"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Diámetro 2"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dia1"
+        app:layout_constraintEnd_toEndOf="@+id/TextDia" />
+
+    <TextView
+        android:id="@+id/dia1"
+        android:layout_width="169dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        android:background="#E1BEE7"
+        android:gravity="center"
+        android:text="Diámetro 1"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/TextDia"
+        app:layout_constraintTop_toTopOf="@+id/TextDia" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
