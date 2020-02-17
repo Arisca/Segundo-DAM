@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SegundaActividad">
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="408dp"
+        android:layout_height="343dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/fondo"
+        android:scaleType="centerCrop"
+        android:tint="@color/cardview_light_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="383dp"
+        android:layout_height="314dp"
+        android:layout_marginTop="66dp"
+        android:contentDescription="@string/grande"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/image1" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@android:style/Widget.DeviceDefault.Light.TextView.SpinnerItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/textview2"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TableLayout
+        android:layout_width="361dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/v"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arbutus"
+                android:text="Vibrant" />
+
+            <Button
+                android:id="@+id/m"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arbutus"
+                android:text="Muted" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/lv"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arbutus"
+                android:text="Light Vibrant" />
+
+            <Button
+                android:id="@+id/lm"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arbutus"
+                android:text="Light Muted" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/dv"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arbutus"
+                android:text="Dark Vibrant" />
+
+            <Button
+                android:id="@+id/dm"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arbutus"
+                android:text="Dark Muted" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
