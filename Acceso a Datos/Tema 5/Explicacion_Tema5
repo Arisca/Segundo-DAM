@@ -1,0 +1,168 @@
+****** CONFIGURACIÓN HIBERNATE ******
+
+	1.		Se crea el proyecto
+	2.	 	Se añade el jar de Postgre
+	3.		En la carpeta src del proyecto se procede a: New... Other... y se seleccionan uno a uno...:
+			a) 	Hibernate Configuration File -> NEXT -> Se rellenan los datos de la conexión
+				En la pestaña Source se puede ver el XML resultante de la información de la conexión
+			b)	Hibernate Console Configuration - > NEXT (Nada importante, observar que sea coincidente con el nombre del paquete)
+			c)	Hibernate Reverse Enginnering File -> NEXT -> NEXT ->
+				En la columna Database Schema se dispondrán los "datos" contenidos en la B.D.
+				Seleccionamos los de interés y "Include"
+				En la pestaña Source se puede ver el XML resultante con la información de los campos incluidos
+
+****** GENERAR LAS CLASES DE LA B.D. ******
+
+	1. (El boton 11) Seleccionamos el boton Run As... -> Hibernate Code Generation Configuration (con la clase reveng seleccionada)
+		Dentro de esa pantalla:
+		- Se selecciona a la izquierda hibernate Code Generation
+		- New configuration (el el icono de arriba a la izquierda)
+		- En la pestaña main se selecciona el src en el browse
+		- Se pone en nombre del nuevo paquete en "package"
+		- Se selecciona el revenge.xml que corresponda al proyecto en cuestión
+		- En la pestaña Exporters tener seleccionado (Use Java5, Domain code, Hibernate XML)
+	2. Si da ERROR -> Proyect -> Build all
+	3. Se creará un paquete con el nombre que se le asigne y en su interior todo lo generado
+
+SE COPIA EL TXT llamado log4j.properties dentro de src!!
+
+****** PERSPECTIVA HIBERNATE ******
+	1. Window -> Open Perspective -> Other -> Hibernate
+	2. En la pestaña de arriba a la izquierda se habrá abierto dicha perspectiva
+	3. Boton derecho sobre el proyecto y seleccionamos Mapping Diagram para generar el mismo
+	
+****** CONSULTAS HQL ******
+	1. Boton derecho sobre "Database" y HQL Editor
+	
+****** PARA EL SIGUIENTE BLOQUE ******
+	Importar la Libreria Hibernate!!
+	Importar  ANTLR-3.5.2-complete.jar (Reconocimiento de sentencias HQL
+	
+	!! Los avisos nos los hemos quitado de encima haciendo que se guardan en un archivo. Para ello hemos creado el fichero  log4j.properties dentro de src !!
+	
+-------------
+	
+SessioFactoryUtil 
+	-> Sirve para asegurarse de que sólo se crea un ubjeto de SessionFactory, con la técnica del Singleton. Es una técnica utilizada para cuando se quiere asegurar
+	de sólo instanciar un objeto de una clase. Consistirá en crear una clase diferente que es la que creará la instancia del objeto. La primera vez que se llame a esta clase 
+	creará el objeto, y cuando ya esté creado sencillamente volverá una referencia al objeto creado.
+	
+	Para arreglar el deprecated -> El método que no está deprecated es buildSessionFactory (ServiceRegistry)
+
+Segundo_Acceso
+	-> Desde fuera siempre llamaremos a  getSessionFactory (y nos aseguramos que el objeto es privado). La primera vez, como es nulo, lo creará.
+	Pero las siguientes veces únicamente devolverá la referencia al objeto ya creado
+	
+-------------	
+
+Transaciones 
+	-> Lo primero a saber e ssi el SGBD admite transaciones ya que sin ella no se guardarán las posibles modificaciones que se haan sobre la BD
+
+//	SessionFactory sf = SessionFactoryUtil.getSessionFactory ();
+//      Session sesion = sf.openSession ();
+//      Transaction t = sessio.beginTransaction (); 		// El método  beginTransaction () ha hecho comenzar la transacción
+//        
+//       Comarcas comarcas = new Comarcas ();
+//       comarcas.setNomC ((String) "Columbretes");
+//       comarcas.setProvincia ( "Castellón");
+//       sessio.save (como);
+//        
+//       t.commit ();										// El método  commit () la ha confirmado definitivamente
+//       sessio.close ();									// Si en este momento quiera empezar otra transacción sería suficiente con  t.begin () .
+
+	Para no estar pendienets de transacciones, se puede hacer para que automáticamente se haga commit (autocommit), después de cada actualizacion. Sería para ello necesario introducir:
+	
+// 		<Property name = "hibernate.connection.autocommit"> true </ property> // En el fichero:  hibernate.cfg.xml, entre las de <session-factory>
+
+-------------	
+
+Estados de un objeto en relación con su sincronización con la B.D.
+	-> Transitorio ( Cuando el objeto se ha creado pero no se ha asociado a ninguna sesión) Se podrá asociar con save() para guardar el objeto o con load() para coger desde la B.D.
+	-> Persistente ( Cuando el objeto ya se ha asociado con una sesion y tiene una representacion con un valor identificador)
+	-> Separado (Es un objeto persistente pero que su sesion ha finalizado, se puede utilizar e incluso cambiar el estado, pero no tendrá efecto en los cambios de la B.D)
+	
+//		SessionFactory sf = SessionFactoryUtil.getSessionFactory ();
+//      Session sesion = sf.openSession ();
+//      Transaction t = sessio.beginTransaction ();
+//
+//      Comarcas como = new Comarca (); // A partir de aquí el objeto es transitorio //  (-> Comarcas como = new Comarca() sessio.load(Comarca.class, "Alt Maestrat");)
+//																					 //  (-> Comarcas como = new Comarca() sessio.get (Comarca.class, "Alt Maestrat");) <- preferible
+//      com.setNomC ((String) "Columbretes");
+//      com.setProvincia ( "Castellón");
+//      sessio.save (como);
+//
+//      sessio.save (como); // A partir de ahí es persistente
+//
+//      t.commit ();
+//
+//      sessio.close (); // A partir de ahí es separado, igual se puede utilizar,
+//                                      // pero no estará sincronizado
+//
+//      System.out.println (com.getNomC () + "(" + com.getProvincia () + ")"
+
+-------------
+	
+Carga de objetos
+
+	Con los siguientes métodos se obtiene el mismo resultado, aunque no se puede asegurar el orden de muestreo:
+	
+		-> Se pueden recorrer de más de una manera, pero el más extendido es utilizando un Iterator con los métodos hasNext() y next()
+			-> Class.Tercer_Acceso <-
+			-> Class.AccesoconIterate <-
+		-> Otra forma más sencilla es con el bucle foreach, que hace el recorrido él solo e irá recoiendo todos los valores de la colección
+			-> Class.Cuarto_Acceso <-
+			-> Class.AccesoconForeach <-
+		-> Utilizando List
+			-> Class.AccesoconList <-
+
+	Para que el muestreo aparezca de forma ordenada, se puede hacer:
+	
+		-> Consultar también el Apartado -> Parámetros en las consultas
+		
+		-> Modificando el fichero Comarca.hbm.xml añadiendo order-by en la definición del set poblacion, quedando de esta forma: (Con este cambio, las clases Tercer y Cuarto Acceso
+		se verían de forma ordenada)
+		
+// 		<Septiembre embed-xml = "true"
+//		fetch = "select"
+//		inverse = "true"
+//		lazy = "true" 
+//		mutable = "true" 
+//		name = "población" 
+//		optimistic-lock = "true" 
+//		sort = "unsorted" 
+//		table = "poblacion"
+//		order-by =" nombre ">
+
+-------------
+	
+Insercción, Borrado y Modificacion
+
+	-> Para que las operaciones de actualización tengan efecto habrá que ponerlas en una transaccion adecuada
+		-> Class.Inserccion <- (Utilizando el método save(), el cual si no existe el objeto lo crea (siempre funciona por lo tanto)
+	-> Para borrar:
+		-> Class.Borrrado <-
+	-> Para modificarlo, con el metodo update(). (En el ejemplo se utiliza un rollback, para que no tenga efecto el cambio y no modifique los datos)
+	Éste método es especifico para hacer actualizaciones de un objeto que ya existía en la B.D. Solo funciona para actualizaciones!!
+		-> Class.Update <-
+	-> Más Ejemplos -> Class.Delete <-> Class.Update2 <-> Class.Insert <-
+		
+-------------
+
+Parámetros en las consultas
+
+CON UNA MESA
+	-> Class.ConsultaconParametros1 // Class.ConsultaconParametros2
+		-> Dos versiones del mismo ejemplo intentando sacar las poblaciones de una determinada comarca, que tienen una altura determinada o mayor (500 metros)
+		
+CON MAS DE UNA MESA	
+	-> Class.ConsultaCompleja1
+		-> Se obtienen los resultados mediante un array de objetos, donde el primero es el equivalente de la primera tabla y el segundo de la segunda, etc.
+	-> Class.ConsultaCompleja2
+		-> Se utiliza el metodo uniqueResult() con la finalidad de calcular la altura media de todas las poblaciones y devolverlas en un unico valor (una fila, una columna...)
+	-> Class.ConsultaCompleja3
+		-> Se gestiona con un array los objetos que se obtienen, siendo en esta ocasion cada objeto un tipo simple
+
+
+
+
+
