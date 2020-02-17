@@ -1,0 +1,34 @@
+xquery version "3.1";
+
+(: REALIZAR LAS EXPRESIONES XPATH QUE VUELVEN LAS SIGUIENTES CUESTIONES :)
+
+(: 1. Sacar el nombre de todas las rutas :)
+//ruta/nom/text()
+
+(: 2. Sacar el nombre de las rutas con un desnivel mayor de 600m :)
+//ruta[desnivell>"600"]/nom/text()
+
+(: 3. Sacar las rutas en las que el desnivel acumulado duplica el desnivel :)
+//ruta[desnivellAcumulat div 2>desnivell]/nom/text()
+
+(: 4. Sacar el nombre del primer punto de cada ruta :)
+//punt[@num=1]/nom/text()
+
+(: 5. Sacar el nombre del ultimo punto de cada ruta :)
+//punt[last()]/nom/text()
+
+(: 6. Sacar los puntos de la tercera ruta :)
+//ruta[position()=3]//punt/nom/text()
+
+(: 7. Sacar el numero de puntos de la tercera ruta :)
+//ruta[position()=3]//punts/count(punt)
+
+(: 8. Sacar el nombre de las rutas que tienen estrictamente más de 5 puntos :)
+//ruta/nom[../punts/count(punt)>5]/text()
+
+(: 9. Sacar la media de desnivel de las rutas :)
+//avg(//desnivell)
+
+(: 10. Sacar las rutas en las que hay alun punto más abajo del paralelo 40 :)
+//ruta/nom[../punts/punt/latitud<40]/text()
+

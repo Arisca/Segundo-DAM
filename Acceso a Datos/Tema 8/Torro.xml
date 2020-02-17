@@ -1,0 +1,25 @@
+<?xml-stylesheet type ="text/css" href="Torro.css"?>
+<Producto> 
+<Descripcion>
+El <NomProducte> Turrón </NomProducte> es un <Sumario> dulce que se hace generalmente de <Ingrediente> almendra </Ingrediente>, <Ingrediente> miel </Ingrediente> y <Ingrediente> huevo </Ingrediente> </Sumario >, generalmente cocido.
+</Descripcion>
+ 
+<Origen>
+ 
+<Párrafo> El origen del turrón no es del todo claro, la teoría más plausible es que sea de origen <i> árabe </i>, como otros postres con almendras, y desde las comarcas del Sur del País Valenciano, especialmente de <b> Jijona </b> y <b> Alicante </b> estando se popularizó en otras zonas peninsulares, el sur de Francia y otras partes del mundo </Párrafo>
+ 
+<Párrafo> Quizás el nogat occitano y el <i> torrone </i> o turrón italiano nacieron también directamente de los árabes, o no se sabe si por influencia del turrón catalán, que ya existía en la Edad Media y que en ese momento, y en concreto en el siglo XV, la catalana era la cocina más prestigiosa de Europa. </Párrafo>
+ 
+</Origen>
+ 
+<Variedades> Variedades 
+<List>
+<Item> <i> Turrón de Jijona </i> </Item>
+<Item> <i> Turrón de Alicante </i> </Item>
+<Item> <i> Turrón de Xerta </i> </Item>
+<Item> <i> Turrón de Xerta </i> </Item>
+<Item> <i> Turrón de Xerta </i> </Item>
+</List> 
+</Variedades>
+ 
+</Producto>

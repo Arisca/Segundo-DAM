@@ -1,0 +1,32 @@
+****** Recordatorio XML ******
+
+	-> Torro.css & Torro.xml
+	
+****** eXist ****** (necesitamos este programa)
+
+	1. Entramos en localhost:8080
+	2. Para crear una nueva colección:
+		-> File -> open -> click en app, volver atrás y click en el sobrecito superior
+		-> posteriormente se selecciona la carpeta creada y en file -> manage -> se agregan los archivos necesarios
+		-> Se comienzan con las sentencias XQuery y SQL -> ALE, SUERTE!!
+		
+****** eXist desde Java******
+	1. Implementar los jar de  http://xqj.net/exist/exist-xqj-api-1.0.1.zip
+	-> Conectarse (XQConnection)
+		-> Class.Conectarse
+	-> Consulta ordenando alumnos por apellidos
+		-> Class.Primeraconsulta
+	-> XQExpression:
+		-> Class.Segundaconsulta
+	-> XQResultItem:
+		-> Class.Terceraconsulta
+	-> ResultSequence:
+		-> Class.Cuartaconsulta
+	-> Obtencion de contenido:
+		-> Class.Obtencion
+		-> Class.Obtencion2
+		-> Class.Obtencion3
+	-> Guardando en un archivo una determinada información transformada de un documento guardado en la B.D.
+		-> Class.Creandodocumento
+		
+		

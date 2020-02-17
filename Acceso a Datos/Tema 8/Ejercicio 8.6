@@ -1,0 +1,37 @@
+xquery version "3.1";
+
+(: HACER LAS EXPRESIONES XQUERY PARA CONSEGUIR...: :)
+
+(: 1. El módulo con el nombre del profesor como atributo :)
+element modul { attribute professor { "Joan Puig" }, "Llenguatges de Marques" }
+
+(: 2. El nombre de cada ruta con el número de puntos como argumento: :)
+for $ ruta in//ruta
+let $ rutas := element rutes { element ruta { attribute numPunts { count($ruta/punts/punt) }, $ruta/nom/text() } }
+return $ rutas
+
+(: 3. Cada ruta con el nombre como atributo, la latitud media de sus puntos y la longitud media :)
+for $ruta in doc("db/Tema8/Rutes.xml")//ruta
+return
+    element ruta {
+        attribute nom { $ruta/nom },
+        element lat_mitj{ avg($ruta/punts/punt/latitud) },
+        element long_mitj{ avg($ruta/punts/punt/longitud) }
+    }
+    
+(: 4. La media de puntos de las rutas :)
+let $punts := count(//ruta/punts/punt)
+let $ruta := count(//ruta)
+return $punts div $ruta
+
+(: 5. ¿Cuántos puntos de cada ruta están en el hemisferio este (es decir, longitud positiva) :)
+for $ruta in//ruta
+let $nomRuta := $ruta/nom
+return
+    if ($ruta/punts/punt/longitud > 0) then
+        for $puntEst in count($ruta/punts/punt/longitud > 0)
+        return concat($nomRuta, " --> ", $puntEst)
+    else
+        concat($nomRuta, " --> ", 0)
+
+

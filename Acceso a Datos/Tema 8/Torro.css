@@ -1,0 +1,52 @@
+Producto {
+    background-color: # FFD7D7;
+    font-size: medium;
+    display: block;
+    margin: 10px;
+}
+
+NomProducte {
+    font-size: large;
+    color: red;
+}
+
+Descripcion {
+    display: block;
+}
+
+Origen {
+    display: block;
+    margin-top: 20px;
+    border-top: 1px;
+}
+
+Párrafo {
+    display: block;
+}
+
+Variedades {
+    display: block;
+    font-size: x-large;
+    color: green;
+    margin-top: 20px;
+}
+
+List {
+}
+
+Item {
+    display: list-item;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: large;
+    color: black;
+}
+
+Y {
+    font-style: italic;
+    color: Blue;
+}
+
+B {
+    font-weight: bold;
+}
