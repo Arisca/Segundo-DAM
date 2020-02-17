@@ -1,0 +1,61 @@
+****** DB40 ******
+
+	-> Es necesario para este tema el tener instalado DB4O
+	-> Agregar dg4o-8.0.249.16098-all-java5.jar al proyecto (dentro de la carpeta lib)
+	
+****** Comienzo ******
+	
+	-> Se crean las clases
+		-> Class.Empleado <-> Class.Direcciones <-> Class.Telefono <-
+		
+****** Insercion ******
+
+	-> Se utiliza el método store (objeto)
+		-> Class.Store1
+	-> En la perspectiva OME Se puede ver el resultado de Empleados.db4o
+		-> Class.Store2 (Añade mas empleados)
+
+		
+****** Consulta basica ******
+	-> Class.Consulta1
+		-> Se utiliza un if para recorrer la lista, en lugar de un bucle. Este caso es concreto ya que se conoce con anterioridad que en caso de encontrar
+		una instancia, solo se tratara de "esa" instancia
+		
+****** Borrado ******
+	-> Class.Borrar (Sin Cascada) Si posteriormente se observan los datos desde la perspectiva OME, se comprueba que aun existen los datos pero que estos no
+	corresponden a ningún empleado. Se debería aprovecar el momento para borrar desde dicha perspectiva las instancias de direccion y tlf que correspondian a este
+	empleado que se a borrado para dejarlo todo consistente.
+	-> Class.Borrar2 (Con Cascada) Borra todo correctamente sin dejar nada pendiente
+	
+****** Modificacion ******
+	-> Se ha de modificar en cascada si se trata de una subclase, sino no tendrá efecto
+		-> Class.Modificacion
+	-> Este ejemplo, es igual al anterior, pero en este caso se cierra y se vuelve a abrir la BD. Solo se va a modificar el sueldo, y no es necesario modificarlo en cascada
+		-> Class.Modificacion2
+		
+****** Consultas ******	
+		
+Método Query By Example
+	-> Class.QuerybyExample
+		-> Si por ejemplo se quiere sacar los empleados del departamento 10 que son de Castellon, se utiliza éste metodo
+
+Método Native Queries
+	-> Class.NativeQueries
+		-> Con esta clase se trata de construir un procedimiento en el que se evaluan los objetos y se decide qué objetos cumplen la condicion y cuales no
+		En este ejemplo se crea una clase llamada EmpleatsPerPoblacio a la que se le puede pasar en el constructor un vector de cadenas de caracteres con los nombres
+		de la spoblaciones de las que queremos los empleados
+	-> Class.NativeQueries2
+		-> En este otro ejemplo se buscan los empleados con un sueldo comprendido entre dos valores determinados. En el metodo match() es donde es comprueba la condicion
+		
+Método SODA
+	-> Esta clase trata de acceder a la estructura interna de datos a bajo nivel a fin de seleccionar los notodos de datos que cumplan unos determinados requisitos y que acabarán determinando el resultado de la consulta.
+	-> Class.Soda
+		-> En este caso, se selecciona al empleado con el nif anterior al ("11111111")
+	-> Class.Soda2
+		-> En este caso, sentencia que selecciona a todos los empleados con un sueldo que oscile entre un rango de valores definidos y ordenados de forma descendente
+	-> Class.Soda3
+		-> En este ejemplo se seleccionan los emplados del departamento 10 que son de Castellon. Se utiliza el mismo objeto nodo para ir a;adiendo restricciones
+	
+	
+	
+		
